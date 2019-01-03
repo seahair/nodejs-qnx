@@ -5,10 +5,10 @@ https://github.com/jashandeep-sohi/nodejs-qnx
 nodejs 0.10.0　在　QNX650(SP1)上移植
 
 我做的修改：
-１．QNX650自带的python是2.5版本，请先把python升级到2.6或者2.7,QNX官方有相关的编译好的bin文件，直接解压即可，有关Python的升级，有问题可以留言交流。
-２．deps/cares/cares.gyp:124行，把  --std=gnu89  改为　-std=gnu89；　否则编译时会报出　参数不识别的错误。
-３．deps/v8/tools/js2c.py中，把有关bz2的　代码屏蔽掉，一共３行，否则会报　无法找到bz2。现在我也没有找到正确导入bz2.so的正确方法，如果有朋友知道，麻烦留言说明一下。
-４．在编译前，最好声明　export LINK=g++　，　否则会报　flock相关的错误；当然，当报出错误以后，再声明，然后继续make也可以。
+１．QNX650自带的python是2.5版本，请先把python升级到2.6或者2.7,QNX官方有相关的编译好的bin文件，直接解压即可，有关Python的升级，有问题可以留言交流。  
+２．deps/cares/cares.gyp:124行，把  --std=gnu89  改为　-std=gnu89；　否则编译时会报出　参数不识别的错误。  
+３．deps/v8/tools/js2c.py中，把有关bz2的　代码屏蔽掉，一共３行，否则会报　无法找到bz2。现在我也没有找到正确导入bz2.so的正确方法，如果有朋友知道，麻烦留言说明一下。  
+４．在编译前，最好声明　export LINK=g++　，　否则会报　flock相关的错误；当然，当报出错误以后，再声明，然后继续make也可以。  
 
 在qnx下执行　如下命令：
 python2.7 ./configure
